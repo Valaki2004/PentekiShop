@@ -1,0 +1,14 @@
+<!-- {{products|json}}  -->
+<div class="card " style="width: 70rem;">
+    <div *ngFor="let product of products" class="row">
+    <img  [src]="product.keplink" [alt]="product.termeknev">
+    <div class="card-body">
+      <h5 class="card-title">{{product.termeknev}}</h5>
+      <p class="card-text">{{product.leiras}}</p>
+      <form class="form-inline my-2 my-lg-0">
+        <input [(ngModel)]="product.db" class="form-control mb-3" type="text">
+        <button [disabled]="!product.db" (click)="addProduct(product)" class="btn btn-outline-success my-2 my-sm-0" type="button">Add</button>
+      </form>
+    </div>
+</div>
+  </div>
